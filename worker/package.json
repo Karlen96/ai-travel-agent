@@ -1,0 +1,12 @@
+{
+  "name": "travel-agent-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "openai": "^7.45.1"
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Travel Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <main>
+    <!-- 1. Welcome -->
+    <section id="welcome-view" class="view welcome">
+      <div class="logo" aria-hidden="true"><span>😺</span><span class="logo-bag">🧳</span></div>
+      <h1 class="visually-hidden">AI Travel Agent</h1>
+      <button id="begin" class="pill-btn">Let's Begin</button>
+    </section>
+
+    <!-- 2. Trip form -->
+    <form id="form-view" class="view" hidden>
+      <div class="field">
+        <span class="label">Number of travellers</span>
+        <div class="stepper">
+          <button type="button" class="round-btn" id="minus" aria-label="Fewer travellers">−</button>
+          <output id="travellers">1</output>
+          <button type="button" class="round-btn" id="plus" aria-label="More travellers">+</button>
+        </div>
+      </div>
+      <label class="field">
+        <span class="label">Flying from</span>
+        <input name="from" type="text" placeholder="New York City" required>
+      </label>
+      <label class="field">
+        <span class="label">Flying to</span>
+        <input name="to" type="text" placeholder="Paris" required>
+      </label>
+      <label class="field">
+        <span class="label">From Date</span>
+        <input name="startDate" type="date" required>
+      </label>
+      <label class="field">
+        <span class="label">To Date</span>
+        <input name="endDate" type="date" required>
+      </label>
+      <label class="field">
+        <span class="label">Budget</span>
+        <span class="money"><span>$</span><input name="budget" type="number" min="1" placeholder="5000" required></span>
+      </label>
+      <p id="form-error" class="error" hidden></p>
+      <button id="plan-btn" class="pill-btn">Plan my Trip!</button>
+    </form>
+
+    <!-- 3. Your Trip -->
+    <section id="trip-view" class="view" hidden>
+      <h2>Your Trip</h2>
+      <div class="chips">
+        <span class="chip" id="start-chip"></span>
+        <span class="chip" id="end-chip"></span>
+      </div>
+      <span class="chip chip-wide" id="route-chip"></span>
+
+      <figure id="image-box" class="trip-image" hidden><img id="trip-image" alt=""></figure>
+      <button id="image-btn" type="button" class="link-btn">✨ Generate an AI postcard of this place</button>
+
+      <h3>Weather</h3>
+      <p class="card" id="weather"></p>
+
+      <h3>Flights</h3>
+      <div class="card">
+        <p id="flights"></p>
+        <a id="flights-link" class="pill-btn small" target="_blank" rel="noopener">Book</a>
+      </div>
+
+      <h3>Hotel</h3>
+      <div class="card">
+        <p id="hotel"></p>
+        <a id="hotel-link" class="pill-btn small" target="_blank" rel="noopener">Book</a>
+      </div>
+
+      <h3>Things to do</h3>
+      <ul class="card activities" id="activities"></ul>
+
+      <p class="note">AI suggestions — check prices and availability before booking.</p>
+      <div class="actions">
+        <button id="share-btn" type="button" class="pill-btn outline">Share trip</button>
+        <button id="new-trip" type="button" class="pill-btn">Plan another trip</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/index.js"></script>
+</body>
+</html>

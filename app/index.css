@@ -1,0 +1,115 @@
+:root {
+  --bg: #f1fffb;
+  --card: #d9f7f0;
+  --accent: #6ef0c8;
+  --teal: #43c6ac;
+  --ink: #111;
+  --muted: #4b5b58;
+  --error: #b00020;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+main {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+.view { display: flex; flex-direction: column; gap: 14px; }
+.view[hidden] { display: none; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);
+}
+
+/* Welcome */
+.welcome { align-items: center; justify-content: center; min-height: 80vh; gap: 40px; }
+.logo {
+  width: 200px; height: 200px; border-radius: 50%;
+  background: var(--teal); border: 3px solid var(--ink);
+  display: grid; place-items: center; position: relative;
+  font-size: 96px;
+}
+.logo-bag { position: absolute; right: 18px; bottom: 22px; font-size: 52px; }
+
+/* Buttons */
+.pill-btn {
+  font: inherit; font-weight: 800; font-size: 1.1rem;
+  background: var(--accent); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 999px;
+  padding: 12px 28px; cursor: pointer; text-align: center; text-decoration: none;
+  width: 100%;
+}
+.pill-btn.small { width: auto; font-size: 0.95rem; padding: 6px 20px; align-self: center; }
+.pill-btn.outline { background: transparent; }
+.pill-btn:disabled { opacity: 0.6; cursor: wait; }
+.welcome .pill-btn { width: 240px; }
+
+.round-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 0; background: var(--ink); color: #fff;
+  font-size: 1.3rem; font-weight: 800; cursor: pointer;
+}
+
+.link-btn {
+  font: inherit; font-weight: 600; background: none; border: 0;
+  color: var(--muted); text-decoration: underline; cursor: pointer;
+}
+
+/* Form */
+.field { display: flex; flex-direction: column; gap: 6px; text-align: center; }
+.label { font-weight: 800; }
+
+input {
+  font: inherit; font-size: 1rem; text-align: center;
+  border: 2px solid var(--ink); border-radius: 999px;
+  padding: 10px 16px; background: #fff; color: var(--ink);
+  width: 100%;
+}
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+.stepper {
+  display: flex; align-items: center; justify-content: space-between;
+  border: 2px solid var(--ink); border-radius: 999px; padding: 4px; background: #fff;
+}
+.stepper output { font-weight: 800; font-size: 1.1rem; }
+
+.money { display: flex; align-items: center; border: 2px solid var(--ink); border-radius: 999px; background: #fff; padding-left: 18px; }
+.money span { font-weight: 800; }
+.money input { border: 0; background: transparent; }
+
+.error { color: var(--error); text-align: center; margin: 0; }
+
+/* Trip */
+h2 { text-align: center; font-size: 2rem; font-weight: 800; margin: 0; }
+h3 { text-align: center; font-weight: 800; margin: 8px 0 0; }
+
+.chips { display: flex; gap: 10px; }
+.chip {
+  flex: 1; text-align: center; font-weight: 800;
+  border: 2px solid var(--ink); border-radius: 999px; padding: 8px 10px; background: #fff;
+}
+.chip-wide { display: block; }
+
+.card {
+  background: var(--card); border-radius: 12px; padding: 14px 16px; margin: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); line-height: 1.45;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.card p { margin: 0; }
+.activities { padding-left: 32px; display: block; }
+.activities li + li { margin-top: 6px; }
+
+.trip-image { margin: 0; }
+.trip-image img { width: 100%; border-radius: 12px; border: 2px solid var(--ink); display: block; }
+
+.note { color: var(--muted); font-size: 0.85rem; text-align: center; margin: 0; }
+.actions { display: flex; flex-direction: column; gap: 10px; }
